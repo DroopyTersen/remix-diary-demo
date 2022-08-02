@@ -16,7 +16,14 @@ export default function DiaryEntryRoute() {
         </Link>
       </div>
       <pre>{entry.content}</pre>
-      <Form method="delete">
+      <Form
+        method="delete"
+        onSubmit={(e) => {
+          if (!window.confirm("Are you sure you want to delete this entry?")) {
+            e.preventDefault();
+          }
+        }}
+      >
         <button className="error">Delete</button>
       </Form>
     </>
