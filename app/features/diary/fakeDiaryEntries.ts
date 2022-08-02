@@ -1,7 +1,5 @@
-export interface DiaryEntry {
-  date: string;
-  content: string;
-}
+import { DiaryEntry } from "./diary.types";
+
 export const fakeDiaryEntries: DiaryEntry[] = [
   {
     date: "1987-09-12",
@@ -10,6 +8,6 @@ export const fakeDiaryEntries: DiaryEntry[] = [
   },
   {
     date: "2021-06-19",
-    content: "I got married.\n",
+    content: "Wedding day.",
   },
 ].sort((a, b) => (a.date > b.date ? -1 : 1));

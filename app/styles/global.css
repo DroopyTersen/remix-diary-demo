@@ -32,38 +32,37 @@ html * {
 .app-header + main {
   padding: var(--headerHeight) var(--gutter) 0;
 }
-
-.diary-layout {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  height: 100%;
-  gap: var(--gutter);
-}
-.diary-layout .left-panel {
-  /* background: red; */
-  border-right: 1px solid var(--neutralLight);
-  padding-right: var(--gutter);
-}
-.diary-layout .main-content {
-  max-width: 700px;
-}
 .active {
   font-weight: bolder;
-}
-.diary-layout pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  padding: var(--gutter);
 }
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* border-bottom: 1px solid var(--neutralLight); */
 }
 
-input,
-textarea {
+form input,
+form textarea {
   margin-bottom: var(--gutter);
+}
+
+html pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: var(--gutter);
+}
+
+.left-pane-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 100%;
+  gap: var(--gutter);
+}
+.left-pane-layout > div:first-child {
+  /* background: red; */
+  border-right: 1px solid var(--neutralLight);
+  padding-right: var(--gutter);
+}
+.left-pane-layout > *:nth-child(2) {
+  max-width: 700px;
 }

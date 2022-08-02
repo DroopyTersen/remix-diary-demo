@@ -9,8 +9,8 @@ export default function DiaryRoute() {
   let entries = useLoaderData() as DiaryEntry[];
   let { date: activeDate } = useParams();
   return (
-    <main className="diary-layout">
-      <div className="left-panel">
+    <main className="left-pane-layout">
+      <div>
         <div className="header">
           <h2>Diary Entries</h2>
           <div>
@@ -19,7 +19,7 @@ export default function DiaryRoute() {
             </Link>
           </div>
         </div>
-        <ul className="diaries-list">
+        <ul>
           {entries
             .sort((a, b) => (a.date > b.date ? -1 : 1))
             .map((entry) => (
@@ -34,7 +34,7 @@ export default function DiaryRoute() {
             ))}
         </ul>
       </div>
-      <div className="main-content">
+      <div>
         <Outlet />
       </div>
     </main>
