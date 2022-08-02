@@ -1,0 +1,81 @@
+=== Header Nav ===
+<header>
+  <Link to="/">App Logo</Link>
+  <Link to="/diary">Diary</Link>
+  <Link to="/photos">Photos</Link>
+</header>
+
+=== Diary Layout w/o Outlet ===
+
+<main className="left-pane-layout">
+  <div>
+
+    <div className="header">
+      <h2>Diary Entries</h2>
+      <Link to="new" className="button">
+        + Entry
+      </Link>
+    </div>
+
+    <ul>
+      {entries.map((entry) => (
+        <li
+          key={entry.date}
+        >
+          <Link to={`${entry.date}`}>{entry.date}</Link>
+        </li>
+      ))}
+    </ul>
+
+  </div>
+
+  <div>
+    Main Content
+  </div>
+
+</main>
+
+
+=== Edit Form Header ===
+<div className="header">
+  <h1>Edit {date}</h1>
+  <div>
+    <Link to={`/diary/${date}`}>Cancel</Link>
+    <button type="submit">Save</button>
+  </div>
+</div>
+
+=== Form Fields === 
+
+<div>
+  <label>
+    Date
+    <input type="date" name="date" required />
+  </label>
+
+  <label>
+    Content
+    <textarea rows={8} name="content" required />
+  </label>
+</div>
+
+
+
+
+=== Save Action ===
+
+export const action = async ({ request }: ActionArgs) => {
+  let formData = await request.formData();
+  await fetch(`${process.env.API_URL}/diary`, {
+    method: "POST",
+    body: JSON.stringify(Object.fromEntries(formData)),
+  });
+
+  return redirect(`/diary/${formData.get("date")}`);
+};
+
+=== Get Entry Loader ===
+export const loader = ({ params }: LoaderArgs) => {
+  return fetch(`${process.env.API_URL}/diary/${params.date}`);
+};
+
