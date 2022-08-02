@@ -1,7 +1,21 @@
+import { Link, Outlet } from "@remix-run/react";
+
 export default function DiaryRoute() {
   return (
-    <main>
-      <h1>Hi I'm the diary</h1>
+    <main className="diary-layout">
+      <div className="left-panel">
+        <div className="header">
+          <h2>Diary Entries</h2>
+          <div>
+            <Link to="new" className="button">
+              + Add
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="main-content">
+        <Outlet />
+      </div>
     </main>
   );
 }

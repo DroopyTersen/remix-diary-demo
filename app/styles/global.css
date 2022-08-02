@@ -3,6 +3,7 @@
   --gutter: 24px;
   --primary: steelblue;
   --neutralText: #444;
+  --neutralLight: #eee;
 }
 body {
   color: var(--neutralText);
@@ -15,7 +16,7 @@ html * {
   width: 100%;
   padding: 0 var(--gutter);
   height: var(--headerHeight);
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--neutralLight);
   display: flex;
   align-items: center;
   gap: calc(var(--gutter) * 1.7);
@@ -28,5 +29,24 @@ html * {
   color: var(--primary);
 }
 .app-header + main {
-  padding: var(--headerHeight) var(--gutter) var(--gutter);
+  padding: var(--headerHeight) var(--gutter) 0;
+}
+
+.diary-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 100%;
+  gap: var(--gutter);
+}
+.diary-layout .left-panel {
+  /* background: red; */
+  border-right: 1px solid var(--neutralLight);
+  padding-right: var(--gutter);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--neutralLight);
 }
