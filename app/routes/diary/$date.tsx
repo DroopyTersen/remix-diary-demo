@@ -1,13 +1,15 @@
-import { Link, useParams } from "@remix-run/react";
+import { Link, useLoaderData, useParams } from "@remix-run/react";
 import { fakeDiaryEntries } from "~/fakeDiaryEntries";
 
+export const loader = ({ params }) => {
+  return fetch(`${process.env.API_URL}/diary/${params.date}`);
+};
 export default function DiaryEntryRoute() {
-  let { date } = useParams();
-  let entry = fakeDiaryEntries.find((entry) => entry.date === date);
+  let entry = useLoaderData();
   return (
     <>
       <div className="header">
-        <h1>{date}</h1>
+        <h1>{entry.date}</h1>
         <Link to="edit" className="button">
           Edit
         </Link>

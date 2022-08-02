@@ -21,6 +21,7 @@ export function DiaryFormFields({ initial }: Props) {
           name="content"
           defaultValue={initial?.content || ""}
           required
+          rows={8}
         />
       </label>
     </div>
