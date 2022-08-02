@@ -30,7 +30,6 @@ html * {
 }
 .app-header + main {
   padding: var(--headerHeight) var(--gutter) 0;
-  max-width: 1200px;
 }
 
 .diary-layout {
@@ -44,8 +43,16 @@ html * {
   border-right: 1px solid var(--neutralLight);
   padding-right: var(--gutter);
 }
+.diary-layout .main-content {
+  max-width: 700px;
+}
 .diaries-list .active {
   font-weight: bolder;
+}
+.diary-layout pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: var(--gutter);
 }
 .header {
   display: flex;
