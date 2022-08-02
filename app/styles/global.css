@@ -30,6 +30,7 @@ html * {
 }
 .app-header + main {
   padding: var(--headerHeight) var(--gutter) 0;
+  max-width: 1200px;
 }
 
 .diary-layout {
