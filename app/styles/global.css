@@ -1,3 +1,32 @@
+:root {
+  --headerHeight: 64px;
+  --gutter: 24px;
+  --primary: steelblue;
+  --neutralText: #444;
+}
+body {
+  color: var(--neutralText);
+}
 html * {
   box-sizing: border-box;
+}
+.app-header {
+  position: fixed;
+  width: 100%;
+  padding: 0 var(--gutter);
+  height: var(--headerHeight);
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gutter) * 1.7);
+}
+.app-header a {
+  color: var(--neutralText);
+}
+.app-header .app-logo {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+.app-header + main {
+  padding: var(--headerHeight) var(--gutter) var(--gutter);
 }

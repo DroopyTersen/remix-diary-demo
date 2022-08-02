@@ -1,5 +1,6 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -35,11 +36,28 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <AppLayout>
+          <Outlet />
+        </AppLayout>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+function AppLayout({ children }) {
+  return (
+    <>
+      <header className="app-header">
+        <Link to="/" className="app-logo">
+          App Logo
+        </Link>
+        <Link to="/diary">Diary</Link>
+        <Link to="/photos">Photos</Link>
+      </header>
+      {children}
+    </>
   );
 }
