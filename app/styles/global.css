@@ -43,6 +43,9 @@ html * {
   border-right: 1px solid var(--neutralLight);
   padding-right: var(--gutter);
 }
+.diaries-list .active {
+  font-weight: bolder;
+}
 .header {
   display: flex;
   align-items: center;

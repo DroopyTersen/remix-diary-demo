@@ -1,7 +1,8 @@
-import { Link, Outlet } from "@remix-run/react";
+import { Link, Outlet, useParams } from "@remix-run/react";
 import { fakeDiaryEntries } from "~/fakeDiaryEntries";
 
 export default function DiaryRoute() {
+  let { date: activeDate } = useParams();
   return (
     <main className="diary-layout">
       <div className="left-panel">
@@ -15,7 +16,10 @@ export default function DiaryRoute() {
         </div>
         <ul className="diaries-list">
           {fakeDiaryEntries.map((entry) => (
-            <li key={entry.date}>
+            <li
+              key={entry.date}
+              className={entry.date === activeDate ? "active" : ""}
+            >
               <Link to={entry.date}>{entry.date}</Link>
             </li>
           ))}
