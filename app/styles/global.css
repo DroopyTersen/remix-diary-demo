@@ -48,5 +48,10 @@ html * {
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid var(--neutralLight);
+  /* border-bottom: 1px solid var(--neutralLight); */
+}
+
+input,
+textarea {
+  margin-bottom: var(--gutter);
 }
