@@ -1,4 +1,5 @@
-import { Link, useLoaderData, useParams } from "@remix-run/react";
+import { ActionFunction, redirect } from "@remix-run/node";
+import { Form, Link, useLoaderData, useParams } from "@remix-run/react";
 import { fakeDiaryEntries } from "~/fakeDiaryEntries";
 
 export const loader = ({ params }) => {
@@ -15,6 +16,15 @@ export default function DiaryEntryRoute() {
         </Link>
       </div>
       <pre>{entry.content}</pre>
+      <Form method="delete">
+        <button className="error">Delete</button>
+      </Form>
     </>
   );
 }
+
+export const action: ActionFunction = async ({ params }) => {
+  let url = `${process.env.API_URL}/diary/${params.date}`;
+  await fetch(url, { method: "DELETE" });
+  return redirect("/diary");
+};
