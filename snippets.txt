@@ -79,3 +79,17 @@ export const loader = ({ params }: LoaderArgs) => {
   return fetch(`${process.env.API_URL}/diary/${params.date}`);
 };
 
+
+=== Deleting ===
+
+<Form method="delete" >
+  <button className="error">Delete</button>
+</Form>
+
+export const action: ActionFunction = async ({ params, request }) => {
+  if (request.method === "delete") {
+    let url = `${process.env.API_URL}/diary/${params.date}`;
+    await fetch(url, { method: "DELETE" });
+  }
+  return redirect("/diary");
+};
