@@ -1,7 +1,8 @@
 import { Link, useParams } from "@remix-run/react";
 import { fakeDiaryEntries } from "~/fakeDiaryEntries";
+import { DiaryFormFields } from "~/features/diary/DiaryFormFields";
 
-export default function DiaryEntryRoute() {
+export default function DiaryEditRoute() {
   let { date } = useParams();
   let entry = fakeDiaryEntries.find((entry) => entry.date === date);
   return (
@@ -13,16 +14,7 @@ export default function DiaryEntryRoute() {
           <button style={{ marginLeft: "20px" }}>Save</button>
         </div>
       </div>
-      <div>
-        <label>
-          Date
-          <input type="date" name="date" defaultValue={date} />
-        </label>
-        <label>
-          Entry
-          <textarea name="content" defaultValue={entry.content} />
-        </label>
-      </div>
+      <DiaryFormFields initial={entry} />
     </form>
   );
 }
