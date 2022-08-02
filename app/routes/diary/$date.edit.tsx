@@ -13,7 +13,9 @@ export default function DiaryEditRoute() {
       <div className="header">
         <h1>Edit: {entry.date}</h1>
         <div>
-          <Link to={"../" + entry.date}>Cancel</Link>
+          <Link prefetch="intent" to={"../" + entry.date}>
+            Cancel
+          </Link>
           <button style={{ marginLeft: "20px" }}>Save</button>
         </div>
       </div>

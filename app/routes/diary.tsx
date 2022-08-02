@@ -27,7 +27,9 @@ export default function DiaryRoute() {
                 key={entry.date}
                 className={entry.date === activeDate ? "active" : ""}
               >
-                <Link to={entry.date}>{entry.date}</Link>
+                <Link prefetch="intent" to={entry.date}>
+                  {entry.date}
+                </Link>
               </li>
             ))}
         </ul>

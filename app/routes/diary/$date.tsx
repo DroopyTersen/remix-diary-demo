@@ -10,7 +10,7 @@ export default function DiaryEntryRoute() {
     <>
       <div className="header">
         <h1>{entry.date}</h1>
-        <Link to="edit" className="button">
+        <Link to="edit" prefetch="intent" className="button">
           Edit
         </Link>
       </div>
