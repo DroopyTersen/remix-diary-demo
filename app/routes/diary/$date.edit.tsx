@@ -1,6 +1,5 @@
 import { ActionFunction, redirect } from "@remix-run/node";
-import { Form, Link, useLoaderData, useParams } from "@remix-run/react";
-import { fakeDiaryEntries } from "~/fakeDiaryEntries";
+import { Form, Link, useLoaderData } from "@remix-run/react";
 import { DiaryFormFields } from "~/features/diary/DiaryFormFields";
 export const loader = ({ params }) => {
   return fetch(`${process.env.API_URL}/diary/${params.date}`);

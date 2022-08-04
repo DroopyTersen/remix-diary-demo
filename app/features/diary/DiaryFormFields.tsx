@@ -1,4 +1,4 @@
-import type { DiaryEntry } from "~/fakeDiaryEntries";
+import { DiaryEntry } from "./diary.types";
 
 interface Props {
   initial?: DiaryEntry;
