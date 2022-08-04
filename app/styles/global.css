@@ -3,7 +3,7 @@
   --gutter: 24px;
   --primary: steelblue;
   --neutralText: #444;
-  --neutralLight: #eee;
+  --neutralLight: #ccc;
 }
 body {
   color: var(--neutralText);
@@ -11,7 +11,7 @@ body {
 html * {
   box-sizing: border-box;
 }
-.app-header {
+header {
   position: fixed;
   width: 100%;
   padding: 0 var(--gutter);
@@ -20,19 +20,19 @@ html * {
   display: flex;
   align-items: center;
   gap: calc(var(--gutter) * 1.7);
-  background: white;
 }
-.app-header a {
+header a {
   color: var(--neutralText);
 }
-.app-header .app-logo {
+
+header a:first-child {
   font-size: 1.4rem;
   color: var(--primary);
 }
-.app-header + main {
+header + * {
   padding: var(--headerHeight) var(--gutter) 0;
 }
-.active {
+li.active {
   font-weight: bolder;
 }
 .header {
@@ -40,7 +40,11 @@ html * {
   align-items: center;
   justify-content: space-between;
 }
-
+.header > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 form input,
 form textarea {
   margin-bottom: var(--gutter);
