@@ -37,11 +37,6 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <header>
-          <Link to="/">App Logo</Link>
-          <Link to="/diary">Diary</Link>
-          <Link to="/photos">Photos</Link>
-        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

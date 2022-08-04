@@ -20,7 +20,7 @@ export default function () {
   let filepath = getFilePath(routeSegment);
 
   return (
-    <main>
+    <main style={{ padding: "2rem" }}>
       <h1>Nested Routing</h1>
       <p>
         Nested Routing is the general idea of coupling segments of the URL to
@@ -29,7 +29,7 @@ export default function () {
 
       <h2>Example</h2>
 
-      <div className="header">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
           <a
             href="#"

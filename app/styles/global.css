@@ -32,7 +32,7 @@ header a:first-child {
 header + * {
   padding: var(--headerHeight) var(--gutter) 0;
 }
-li.active {
+.active {
   font-weight: bolder;
 }
 .header {
